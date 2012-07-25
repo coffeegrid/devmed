@@ -2,6 +2,12 @@ body {
   background: black;
   color: white;
 }
-body a {
+a {
   color: #FC7696;
+}
+h1 {
+  font-size: 3em;
+  letter-spacing: -6px;
+  font-family: 'Monaco';
+  font-weight: normal;
 }
