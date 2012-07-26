@@ -31,3 +31,9 @@ h1 {
 .sub {
   margin-left: 125px;
 }
+.message {
+  margin-top: 100px;
+  font-family: 'Monaco';
+  font-size: 18px;
+  letter-spacing: -2px;
+}
