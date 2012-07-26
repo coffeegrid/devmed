@@ -5,7 +5,8 @@
     "express": "2.5.x",
     "jade": "*",
     "uglify-js": "*",
-    "less-middleware": "*"
+    "less-middleware": "*",
+    "coffee-script": "*"
   },
   "engines": {
     "node": "0.8.x",

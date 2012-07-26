@@ -1,31 +1,43 @@
-var express = require('express')
-  , routes = require('./routes')
-  , http = require('http')
-  , path = require('path');
+(function() {
+  var app, express, http, path, port, pub, routes;
 
-// Path to public directory
-var pub = __dirname + '/public';
-var port = process.env.PORT || 5000;
+  require("coffee-script");
 
-var app = express.createServer(express.logger());
-app.configure(function(){
-    app.set('port', port);
+  express = require("express");
+
+  routes = require("./routes");
+
+  http = require("http");
+
+  path = require("path");
+
+  pub = __dirname + "/public";
+
+  port = process.env.PORT || 5000;
+
+  app = express.createServer(express.logger());
+
+  app.configure(function() {
+    app.set("port", port);
     app.use(express.logger());
-
     app.use(express.static(pub));
-    app.set('views', __dirname + '/views');
-    app.set('view engine', 'jade');
-
+    app.set("views", __dirname + "/views");
+    app.set("view engine", "jade");
     app.use(app.router);
-    app.use(express.compiler({ src: pub, enable: ['less'] }));
-});
+    return app.use(express.compiler({
+      src: pub,
+      enable: ["less"]
+    }));
+  });
 
-app.configure('development', function(){
-  app.use(express.errorHandler());
-});
+  app.configure("development", function() {
+    return app.use(express.errorHandler());
+  });
 
-app.get('/', routes.index);
+  app.get("/", routes.index);
 
-app.listen(port, function() {
-    console.log("Listening on " + port);
-});
+  app.listen(port, function() {
+    return console.log("Listening on " + port);
+  });
+
+}).call(this);
