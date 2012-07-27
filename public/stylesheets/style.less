@@ -1,3 +1,7 @@
+@green: #7D1;
+@blue: #15C6CA;
+@pink: #FC7696;
+
 body {
   background: url("/images/dark_Tire.png") black;
   color: white;
@@ -6,25 +10,27 @@ body {
 }
 
 a {
-  color: #FC7696;
+  color: white;
   text-decoration: none;
+
   -webkit-transition: all 300ms cubic-bezier(0.420, 0.000, 1.000, 1.000);
   -moz-transition: all 300ms cubic-bezier(0.420, 0.000, 1.000, 1.000);
   -ms-transition: all 300ms cubic-bezier(0.420, 0.000, 1.000, 1.000);
   -o-transition: all 300ms cubic-bezier(0.420, 0.000, 1.000, 1.000);
   transition: all 500ms cubic-bezier(0.420, 0.000, 1.000, 1.000); /* ease-in */
 
+  border-bottom: 1px dotted;
 
   &:hover{
-    color: #FDACBF;
+    color: @blue;
   }
 }
 
 h1 {
-  color: #15C6CA;
+  color: @blue;
 
   font-size: 3em;
-  letter-spacing: -6px;
+  letter-spacing: -1px;
   font-family: 'Monaco';
   font-weight: normal;
 
@@ -42,6 +48,10 @@ h1 {
   margin-top: 100px;
   font-family: 'Monaco';
   font-size: 18px;
-  letter-spacing: -2px;
+  letter-spacing: -1px;
 
+}
+
+.keyword{
+  color: @blue;
 }
