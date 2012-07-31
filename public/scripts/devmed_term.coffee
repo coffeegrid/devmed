@@ -12,29 +12,50 @@
 
 class DevmedTerm
 
+  version: '0.0.1'
+
   constructor: ->
     @term = new Terminal(
       handler: @handler,
       ctrlHandler: @ctrlHandler,
+      crsrBlinkMode: true,
       rows: 11;
       bgColor: 'none',
       frameColor: 'none',
       frameWidth: '10px',
-      ps: '%c(#15C6CA)guest@coffeegrid %c(#FC7696)/dev/med $ %c0',
-      greeting: "*** Welcome to /dev/med/ console *** \n"
+      ps: '%c(#15C6CA)guest@coffeegrid %c(#FC7696)/dev/med $%c0',
+      greeting: """
+
+           _                                          _
+    /   ___/   ___  _   __    / , _ , _     ___    ___/    /
+   /   /   | .'   ` |   /    /  |' `|' `. .'   `  /   |   /
+  ,'  ,'   | |----' `  /    ,'  |   |   | |----' ,'   |  ,'
+ ,    `___,' `.___,  \/    ,    /   '   /  `.___, `___,' ,
+           `                                          `     shell v0.01
+
+"""
     )
 
     @term.open()
 
   ctrlHandler: ->
     # C-l = clean
-    @clear(); @prompt() if @inputChar is @termKey.FF
+    if @inputChar is @termKey.FF
+      @clear()
+      @prompt()
 
   handler: ->
+    help = "Empty command set.
+We will be adding user registration, login and talk creation here latter.
+Keep watching"
+
     @newLine()
     line = @lineBuffer
-    @write "You typed: %c(red)" + line  unless line is ""
-
+    #TODO: change this for a call_cmd() function call ;)
+    switch line
+      when "help" then @write help
+      when "" then null
+      else @write "%c(red)#{line}%c0: command not found. Try help"
     @prompt()
 
 jQuery ->

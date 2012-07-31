@@ -45,12 +45,14 @@ h1 {
 .term {
   font-family: 'Monaco';
   font-size: 14px;
-  color: #33d011;
+  color: white;
+  /*color: #33d011;*/
+
   background: none;
 }
 .termReverse {
   color: #111111;
-  background: #33d011;
+  background: #ffffff /*#33d011*/;
 }
 table {
   margin: auto;
