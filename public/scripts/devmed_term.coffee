@@ -15,20 +15,26 @@ class DevmedTerm
   constructor: ->
     @term = new Terminal(
       handler: @handler,
+      ctrlHandler: @ctrlHandler,
       rows: 11;
       bgColor: 'none',
       frameColor: 'none',
       frameWidth: '10px',
-      ps: 'guest@coffeegrid /dev/med $ ',
+      ps: '%c(#15C6CA)guest@coffeegrid %c(#FC7696)/dev/med $ %c0',
       greeting: "*** Welcome to /dev/med/ console *** \n"
     )
 
     @term.open()
 
+  ctrlHandler: ->
+    # C-l = clean
+    @clear(); @prompt() if @inputChar is @termKey.FF
+
   handler: ->
     @newLine()
     line = @lineBuffer
-    @write "You typed: " + line  unless line is ""
+    @write "You typed: %c(red)" + line  unless line is ""
+
     @prompt()
 
 jQuery ->

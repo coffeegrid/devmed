@@ -45,10 +45,10 @@
   embedding web page or application.
   The library should always be accompanied by the 'readme.txt' and the
   sample HTML-documents.
-  
+
   Any changes should be commented and must be reflected in `Terminal.version'
   in the format: "Version.Subversion (compatibility)".
-  
+
   Donations:
   Donations are welcome: You may support and/or honor the development of
   "termlib.js" via PayPal at: <http://www.masswerk.at/termlib/donate/>
@@ -61,7 +61,7 @@
   the product is authorized hereunder except under this disclaimer.
 
   ### The sections above must not be removed. ###
-  
+
   version 1.01: added Terminal.prototype.resizeTo(x,y)
                 added Terminal.conf.fontClass (=> configureable class name)
                 Terminal.prototype.open() now checks for element conf.termDiv
@@ -80,7 +80,7 @@
                 browsers without DOM support.
 
   version 1.05: added config flag historyUnique.
- 
+
   version 1.06: fixed CTRl+ALT (Windows alt gr) isn't CTRL any more
                 fixed double backspace bug for Safari;
                 added TermGlobals.setDisplay for setting style.display props
@@ -123,12 +123,12 @@
                 (Please mind that "this.termKey" is a reference to the static object
                 and not specific to the instance. A change to "this.termKey" will be
                 by any other instances of Terminal too.)
-                
+
                 Added method TermGlobals.assignStyle() for custom styles & mark up.
-                
+
                 Unified the color mark up: You may now use color codes (decimal or hex)
                 inside brackets. e.g.: %c(10)DARKRED%c() or %c(a)DARKRED%c()
-                
+
                 Added key repeat for remapped keys (cursor movements etc).
 
   version 1.41  fixed a bug in the word wrapping regarding write() output, when
@@ -596,7 +596,7 @@ _sbWrap: function() {
 						l++;
 						lc[c]=45;
 					}
-					this._wbOut(wb, lastR, lastC, l);		
+					this._wbOut(wb, lastR, lastC, l);
 					if (ch==10) {
 						this._wbIncLine(wb);
 					}
@@ -969,7 +969,7 @@ reset: function() {
 prompt: function() {
 	this.lock=true;
 	if (this.c>0) this.newLine();
-	this.type(this.ps);
+	this.write(this.ps);
 	this._charOut(1);
 	this.lock=false;
 	this.cursorOn();
@@ -1068,7 +1068,7 @@ backspace: function() {
 		this._scrollLeft(r, c);
 		this.r=r;
 		this.c=c;
-	};	
+	};
 	this._cursorReset(crsron);
 },
 
@@ -1300,7 +1300,7 @@ backupScreen: function() {
 	backup.handler=this.handler;
 	backup.ctrlHandler=this.ctrlHandler;
 	backup.cursoractive=this.cursoractive;
-	
+
 	backup.crsrBlinkMode=this.crsrBlinkMode;
 	backup.crsrBlockMode=this.crsrBlockMode;
 	backup.blinkDelay=this.blinkDelay;
@@ -2198,7 +2198,7 @@ globals: {
 		var k=tg.termKey;
 		for (var i in m) r['DOM_VK_'+i]=k[m[i]];
 	},
-	
+
 	registerEvent: function(obj, eventType, handler, capture) {
 		if (obj.addEventListener) {
 			obj.addEventListener(eventType.toLowerCase(), handler, capture);
@@ -2305,7 +2305,7 @@ globals: {
 			}
 		}
 	},
-	
+
 	clearRepeatTimer: function(e) {
 		var tg=Terminal.prototype.globals;
 		if (tg.keyRepeatTimer) {
@@ -2313,7 +2313,7 @@ globals: {
 			tg.keyRepeatTimer=null;
 		}
 	},
-	
+
 	doKeyRepeat: function(ch) {
 		Terminal.prototype.globals.keyHandler({which:ch,_remapped:true,_repeated:true})
 	},
@@ -2658,7 +2658,7 @@ globals: {
 		8: '<\/strike>',
 		16: '</i>'
 	},
-	
+
 	// method to install custom styles
 	assignStyle: function(styleCode, markup, htmlOpen, htmlClose) {
 		var tg=Terminal.prototype.globals;
@@ -2719,9 +2719,9 @@ globals: {
 		tg.termStyleOpen[s]=htmlOpen;
 		tg.termStyleClose[s]=htmlClose;
 	},
-	
+
 	// ANSI output mapping (styles & fg colors only)
-	
+
 	ANSI_regexp: /(\x1b\[|x9b)([0-9;]+?)([a-zA-Z])/g, // CSI ( = 0x1b+"[" or 0x9b ) + params + letter
 	ANIS_SGR_codes: {
 		'0': '%+p',
@@ -2756,7 +2756,7 @@ globals: {
 		'99': '%c(0)',
 		'trueBlack': '%c(1)'
 	},
-	
+
 	ANSI_map: function(t, trueBlack) {
 		// transform simple ANSI SGR codes to internal markup
 		var tg=Terminal.prototype.globals;
@@ -2768,7 +2768,7 @@ globals: {
 			}
 		);
 	},
-	
+
 	ANSI_replace: function(p, cmd, trueBlack) {
 		var tg=Terminal.prototype.globals;
 		if (cmd=='m') {
@@ -2960,7 +2960,7 @@ var termDomKeyRef = Terminal.prototype.globals.termDomKeyRef;
   <http://www.masswerk.at/termlib/sample_socket.html>
 
 */
-  
+
 Terminal.prototype._HttpSocket = function() {
 	var req=null;
 	if (window.XMLHttpRequest) {
@@ -2999,7 +2999,7 @@ Terminal.prototype._HttpSocket.prototype = {
 	defaulTimeout: 10000,  // request timeout in ticks (milliseconds)
 	defaultMethod: 'GET',
 	forceNewline: true,    // translate line-breaks in responseText to newlines
-	
+
 	// static const
 	errno: {
 		OK: 0,
@@ -3017,7 +3017,7 @@ Terminal.prototype._HttpSocket.prototype = {
 		'Network error.',
 		'The requested local document was not found.'
 	],
-	
+
 	// private static data
 	_msXMLHttpObjects: [
 		'Msxml2.XMLHTTP',
@@ -3026,7 +3026,7 @@ Terminal.prototype._HttpSocket.prototype = {
 		'Msxml2.XMLHTTP.4.0',
 		'Msxml2.XMLHTTP.3.0'
 	],
-	
+
 	// internal methods
 	serializeData: function() {
 		this.query=this.serialize(this.data);
@@ -3304,9 +3304,9 @@ Terminal.prototype.send = function( opts ) {
 			}
 			catch(e) {}
 		}
-		
+
 		var timeoutDelay=(opts.timeout && typeof opts.timeout=='number')? opts.tiomeout : soc.defaulTimeout;
-		
+
 		soc.request.onreadystatechange=function() { soc.callbackHandler(); };
 		try {
 			soc.request.send(body);
