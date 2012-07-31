@@ -1,6 +1,7 @@
 body {
   background: url("/images/dark_Tire.png") #000000;
   color: white;
+  margin: 0;
   text-align: center;
 }
 a {
@@ -40,4 +41,25 @@ h1 {
 }
 .keyword {
   color: #15c6ca;
+}
+.term {
+  font-family: 'Monaco';
+  font-size: 14px;
+  color: #33d011;
+  background: none;
+}
+.termReverse {
+  color: #111111;
+  background: #33d011;
+}
+table {
+  margin: auto;
+}
+#termDiv {
+  background: rgba(0, 0, 0, 0.3);
+  height: 250px;
+  margin-top: 50px;
+}
+#termDiv table:first {
+  margin: auto;
 }
