@@ -19,7 +19,7 @@ class DevmedTerm
       handler: @handler,
       ctrlHandler: @ctrlHandler,
       crsrBlinkMode: true,
-      rows: 11;
+      rows: 16;
       bgColor: 'none',
       frameColor: 'none',
       frameWidth: '10px',
@@ -45,9 +45,21 @@ class DevmedTerm
       @prompt()
 
   handler: ->
-    help = "Empty command set.
-We will be adding user registration, login and talk creation here latter.
-Keep watching"
+    help = """Empty command set.
+
+Comming soon:
+ * useradd
+ * login
+ * talk
+ * change dir (cd) -> web site navigation
+ * mkdir and touch -> content creation (like next event talk proposal)
+ * ls              -> list talks and developers
+
+And you can extend the commands forking the github repo :)
+https://github.com/coffeegrid/devmed
+
+Keep watching ;)
+"""
 
     @newLine()
     line = @lineBuffer
