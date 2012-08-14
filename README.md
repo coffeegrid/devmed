@@ -10,7 +10,7 @@
            `                                          `     
 
 $ what?
-This is the source code of http://devmed.sh
+This is the source code of http://coffeegrid.org/dev/med/
 
 $ why?
 For fun
