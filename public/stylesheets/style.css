@@ -59,9 +59,12 @@ table {
 }
 #termDiv {
   background: rgba(0, 0, 0, 0.3);
-  height: 350px;
+  height: 410px;
   margin-top: 20px;
 }
 #termDiv table:first {
   margin: auto;
+}
+#twitterBtn {
+  margin-top: 30px;
 }
