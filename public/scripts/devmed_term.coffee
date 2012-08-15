@@ -84,6 +84,7 @@ No mail for guest
       when "help"   then @write help
       when "mail"   then @write mail
       when "talks"  then @write talks
+      when "clear"  then @clear()
       when ""       then null
       else @write "%c(red)#{line}%c0: command not found. Try help"
     @prompt()
