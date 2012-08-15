@@ -1,5 +1,4 @@
-[devmed.sh](devmed.sh) web site code
-==========
+[coffeegrid.org/dev/med/](coffeegrid.org/dev/med/) web site code
 
 ```
            _                                          _
