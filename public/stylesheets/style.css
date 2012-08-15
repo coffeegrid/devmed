@@ -23,7 +23,7 @@ h1 {
   color: #15c6ca;
   font-size: 3em;
   letter-spacing: -1px;
-  font-family: 'Monaco';
+  font-family: 'Monaco', 'monospace';
   font-weight: normal;
   margin: 0;
   padding: 0;
@@ -35,7 +35,7 @@ h1 {
 }
 .message {
   margin-top: 40px;
-  font-family: 'Monaco';
+  font-family: 'Monaco', 'monospace';
   font-size: 18px;
   letter-spacing: -1px;
 }
@@ -43,7 +43,7 @@ h1 {
   color: #15c6ca;
 }
 .term {
-  font-family: 'Monaco';
+  font-family: 'Monaco', 'monospace';
   font-size: 14px;
   color: white;
   /*color: #33d011;*/
