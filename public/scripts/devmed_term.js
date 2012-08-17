@@ -15,7 +15,7 @@
         frameColor: 'none',
         frameWidth: '10px',
         ps: '%c(#15C6CA)guest@coffeegrid %c(#FC7696)/dev/med $%c0',
-        greeting: "\n          _                                          _\n   /   ___/   ___  _   __    / , _ , _     ___    ___/    /\n  /   /   | .'   ` |   /    /  |' `|' `. .'   `  /   |   /\n ,'  ,'   | |----' `  /    ,'  |   |   | |----' ,'   |  ,'\n,    `___,' `.___,  \/    ,    /   '   /  `.___, `___,' ,\n          `                                          `     shell v0.02\ntry help command for more info. ;)\n"
+        greeting: "\n          _                                          _\n   /   ___/   ___  _   __    / , _ , _     ___    ___/    /\n  /   /   | .'   ` |   /    /  |' `|' `. .'   `  /   |   /\n ,'  ,'   | |----' `  /    ,'  |   |   | |----' ,'   |  ,'\n,    `___,' `.___,  \/    ,    /   '   /  `.___, `___,' ,\n          `                                          `     shell v0.03\ntry help command for more info. ;)\n"
       });
       this.term.open();
     }
