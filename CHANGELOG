@@ -1,0 +1,11 @@
+0.03
+    clear: alias for C-l
+
+0.02
+    talks: List the next talk information
+    mail:  Boilerplate for mail command
+
+0.01
+    C-l:  clear screen
+    help: shows some future commands
+     

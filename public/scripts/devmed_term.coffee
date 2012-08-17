@@ -31,7 +31,7 @@ class DevmedTerm
    /   /   | .'   ` |   /    /  |' `|' `. .'   `  /   |   /
   ,'  ,'   | |----' `  /    ,'  |   |   | |----' ,'   |  ,'
  ,    `___,' `.___,  \/    ,    /   '   /  `.___, `___,' ,
-           `                                          `     shell v0.02
+           `                                          `     shell v0.03
 try help command for more info. ;)
 
 """
