@@ -50,6 +50,9 @@
         case "talks":
           this.write(talks);
           break;
+        case "clear":
+          this.clear();
+          break;
         case "":
           null;
           break;
